@@ -31,7 +31,6 @@ namespace SynetecMvcAssessment.Core.Services
 
         public BonusPoolCalculatorResultDomainModel Calculate(BonusPoolCalculatorDomainModel domainModel)
         {
-
             if (domainModel == null)
                 throw new ArgumentNullException("viewModel model to calculate was null");
 
@@ -52,7 +51,7 @@ namespace SynetecMvcAssessment.Core.Services
             var totalSalary = _repository.GetAll().Sum(item => item.Salary);
 
             //calculate the bonus allocation for the employee
-            var bonusPercentage = (decimal)employeeSalary / (decimal)totalSalary;
+            var bonusPercentage = employeeSalary / (decimal)totalSalary;
             var bonusAllocation = (int)(bonusPercentage * totalBonusPool);
 
             var result = new BonusPoolCalculatorResultDomainModel
@@ -61,8 +60,8 @@ namespace SynetecMvcAssessment.Core.Services
                 BonusPoolAllocation = bonusAllocation
             };
 
-
             return result;
         }
+
     }
 }
