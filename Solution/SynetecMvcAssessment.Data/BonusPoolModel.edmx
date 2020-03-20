@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MvcInterviewV3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="MvcInterviewV3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="HrDepartment">
           <Key>
             <PropertyRef Name="ID" />
@@ -31,7 +31,8 @@
           <EntitySet Name="HrDepartment" EntityType="Self.HrDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HrEmployee" EntityType="Self.HrEmployee" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MvcInterviewV3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -55,9 +56,9 @@
           <Property Name="HrDepartmentId" Type="Int32" Nullable="false" />
           <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Salary" Type="Int32" Nullable="false" />
-          <Property Name="Full_Name" Type="String" Nullable="false" MaxLength="101" FixedLength="false" Unicode="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="Full_Name" Type="String" MaxLength="101" FixedLength="false" Unicode="true" Nullable="false" annotation:StoreGeneratedPattern="Computed" />
         </EntityType>
-        <EntityContainer Name="MvcInterviewV3Entities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MvcInterviewV3Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="HrDepartments" EntityType="Self.HrDepartment" />
           <EntitySet Name="HrEmployees" EntityType="Self.HrEmployee" />
         </EntityContainer>
@@ -66,7 +67,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="MvcInterviewV3ModelStoreContainer" CdmEntityContainer="MvcInterviewV3Entities1">
+        <EntityContainerMapping StorageEntityContainer="MvcInterviewV3ModelStoreContainer" CdmEntityContainer="MvcInterviewV3Entities">
           <EntitySetMapping Name="HrDepartments">
             <EntityTypeMapping TypeName="MvcInterviewV3Model.HrDepartment">
               <MappingFragment StoreEntitySet="HrDepartment">
@@ -80,7 +81,6 @@
           <EntitySetMapping Name="HrEmployees">
             <EntityTypeMapping TypeName="MvcInterviewV3Model.HrEmployee">
               <MappingFragment StoreEntitySet="HrEmployee">
-                <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="FistName" ColumnName="FistName" />
                 <ScalarProperty Name="SecondName" ColumnName="SecondName" />
@@ -88,6 +88,7 @@
                 <ScalarProperty Name="HrDepartmentId" ColumnName="HrDepartmentId" />
                 <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
                 <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Full_Name" ColumnName="Full Name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

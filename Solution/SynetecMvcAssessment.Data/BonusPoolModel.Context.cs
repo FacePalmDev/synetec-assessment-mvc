@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace InterviewTestTemplatev2.Data
+namespace SynetecMvcAssessment.Data
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MvcInterviewV3Entities1 : DbContext
+    public partial class MvcInterviewV3Entities : DbContext
     {
-        public MvcInterviewV3Entities1()
-            : base("name=MvcInterviewV3Entities1")
+        public MvcInterviewV3Entities()
+            : base("name=MvcInterviewV3Entities")
         {
         }
     
