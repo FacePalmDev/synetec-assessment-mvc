@@ -97,8 +97,12 @@
   <ItemGroup>
     <Compile Include="BonusPoolServiceTests.cs" />
     <Compile Include="BonusPoolControllerTests.cs" />
+    <Compile Include="Helpers\Controllers\ControllerTestHelper.cs" />
+    <Compile Include="Helpers\Controllers\IControllerTestHelper.cs" />
+    <Compile Include="Helpers\Service\IServiceTestHelper.cs" />
+    <Compile Include="Helpers\ITestHelper.cs" />
+    <Compile Include="Helpers\Service\ServiceTestHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -113,11 +117,16 @@
       <Project>{018CE6DF-03F6-4373-9000-834D0CD21390}</Project>
       <Name>SynetecMvcAssessment.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SynetecMvcAssessment.Data\SynetecMvcAssessment.Data.csproj">
+      <Project>{9728A617-36E9-49FD-9913-3238A4266250}</Project>
+      <Name>SynetecMvcAssessment.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SynetecMvcAssessment\SynetecMvcAssessment.csproj">
       <Project>{ADB94C4B-2A3E-4F85-A015-389E5DAA3904}</Project>
       <Name>SynetecMvcAssessment</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -17,7 +17,6 @@
 
 
 using StructureMap;
-using StructureMap.Building;
 using SynetecMvcAssessment.Common.DependencyInjection.DependencyResolution;
 
 namespace InterviewTestTemplatev2.DependencyResolution

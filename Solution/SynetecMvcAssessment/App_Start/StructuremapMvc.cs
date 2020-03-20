@@ -20,7 +20,6 @@ using InterviewTestTemplatev2;
 using InterviewTestTemplatev2.DependencyResolution;
 using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using StructureMap;
-using SynetecMvcAssessment.Common.DependencyInjection.DependencyResolution;
 using WebActivatorEx;
 
 [assembly: PreApplicationStartMethod(typeof(StructuremapMvc), "Start")]

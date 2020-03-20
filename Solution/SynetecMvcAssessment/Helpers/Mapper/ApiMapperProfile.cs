@@ -8,9 +8,8 @@ namespace InterviewTestTemplatev2.Helpers.Mapper
     {
         public ApiMapperProfile()
         {
-            CreateMap<BonusPoolCalculatorDomainModel, BonusPoolCalculatorViewModel>();
+            CreateMap<BonusPoolCalculatorDomainModel, BonusPoolCalculatorViewModel>().ReverseMap();
             CreateMap<BonusPoolCalculatorResultDomainModel, BonusPoolCalculatorResultViewModel>();
-            CreateMap<BonusPoolCalculatorViewModel, BonusPoolCalculatorDomainModel>();
             CreateMap<EmployeeDomainModel, HrEmployeeViewModel>();
 
         }

@@ -16,10 +16,8 @@
 // --------------------------------------------------------------------------------------------------------------------
 
 using System.Data.Entity;
-using StructureMap;
 using StructureMap.Configuration.DSL;
 using StructureMap.Graph;
-using SynetecMvcAssessment.Common.Helpers.Mapping;
 using SynetecMvcAssessment.Core.Contracts;
 using SynetecMvcAssessment.Core.Services;
 using SynetecMvcAssessment.Data;
