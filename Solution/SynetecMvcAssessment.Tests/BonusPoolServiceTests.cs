@@ -43,8 +43,6 @@ namespace SynetecMvcAssessment.Tests
             Assert.AreEqual(Json.Encode(expected), Json.Encode(actual));
         }
 
-
-
         [TestMethod]
         [ExpectedException(typeof(EmployeeNotFoundException))]
         public void CalculationWhereUserNotFoundThrowsEmployeeNotFoundException()
