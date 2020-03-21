@@ -3,7 +3,8 @@
     public class BonusPoolCalculatorResultViewModel
     {
         public HrEmployeeViewModel HrEmployee;
-        public int BonusPoolAllocation;
-
+        
+        //todo: Consider making this decimal? Seek clarification here.
+        public uint BonusPoolAllocation;
     }
 }

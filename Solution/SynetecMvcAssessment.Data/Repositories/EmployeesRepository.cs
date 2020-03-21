@@ -21,6 +21,6 @@ namespace SynetecMvcAssessment.Data.Repositories
 
         public IEnumerable<EmployeeDto> GetAll() => _mappingHelper.Map<IEnumerable<EmployeeDto>>(DbSet.AsEnumerable()) ;
 
-        public EmployeeDto Get(int id) => _mappingHelper.Map<EmployeeDto>(DbSet.Find(id));
+        public EmployeeDto Get(uint id) => _mappingHelper.Map<EmployeeDto>(DbSet.Find((int)id));
     }
 }

@@ -1,8 +1,10 @@
-﻿namespace SynetecMvcAssessment.Core.Models
+﻿using System.Runtime.CompilerServices;
+
+namespace SynetecMvcAssessment.Core.Models
 {
     public class BonusPoolCalculatorDomainModel
     {
-        public int BonusPoolAmount { get; set; }
-        public int SelectedEmployeeId { get; set; }
+        public uint BonusPoolAmount { get; set; }
+        public uint SelectedEmployeeId { get; set; }
     }
 }
