@@ -3,6 +3,6 @@
     public class BonusPoolCalculatorResultDomainModel
     {
         public EmployeeDomainModel HrEmployee;
-        public int BonusPoolAllocation;
+        public uint BonusPoolAllocation;
     }
 }

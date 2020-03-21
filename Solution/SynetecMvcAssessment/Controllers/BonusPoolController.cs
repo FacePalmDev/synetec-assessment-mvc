@@ -13,12 +13,12 @@ namespace InterviewTestTemplatev2.Controllers
     public class BonusPoolController : Controller
     {
         private readonly IBonusPoolService _service;
-        private readonly IMappingHelper<ApiMapperProfile> _mappingHelper;
+        private readonly IMappable<ApiMapperProfile> _mappable;
 
-        public BonusPoolController(IBonusPoolService service, IMappingHelper<ApiMapperProfile> mappingHelper)
+        public BonusPoolController(IBonusPoolService service, IMappable<ApiMapperProfile> mappable)
         {
             _service = service;
-            _mappingHelper = mappingHelper;
+            _mappable = mappable;
         }
 
         // GET: BonusPool
@@ -27,7 +27,7 @@ namespace InterviewTestTemplatev2.Controllers
             var model = new BonusPoolCalculatorViewModel
             {
                 // todo make API model
-                AllEmployees = _mappingHelper.Map<IEnumerable<HrEmployeeViewModel>>(_service.GetAllEmployees())
+                AllEmployees = _mappable.Map<IEnumerable<HrEmployeeViewModel>>(_service.GetAll())
             };
 
             return View(model);
@@ -43,9 +43,9 @@ namespace InterviewTestTemplatev2.Controllers
 
             try
             {
-                var domainModel = _mappingHelper.Map<BonusPoolCalculatorDomainModel>(viewModel);
+                var domainModel = _mappable.Map<BonusPoolCalculatorDomainModel>(viewModel);
                 var domainResult = _service.Calculate(domainModel);
-                result = _mappingHelper.Map<BonusPoolCalculatorResultViewModel>(domainResult);
+                result = _mappable.Map<BonusPoolCalculatorResultViewModel>(domainResult);
             }
             catch (EmployeeNotFoundException)
             {

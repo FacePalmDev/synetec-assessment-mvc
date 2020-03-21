@@ -2,7 +2,7 @@
 
 namespace SynetecMvcAssessment.Common.Helpers.Mapping
 {
-    public class MappingHelper<TProfile>: IMappingHelper<TProfile> where TProfile : Profile, new()
+    public class MappingHelper<TProfile>: IMappable<TProfile> where TProfile : Profile, new()
     {
         private readonly Mapper _mapper;
 

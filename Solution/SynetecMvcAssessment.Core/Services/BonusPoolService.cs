@@ -24,7 +24,7 @@ namespace SynetecMvcAssessment.Core.Services
             _mappingHelper = mappingHelper;
         }
 
-        public IEnumerable<EmployeeDomainModel> GetAllEmployees()
+        public IEnumerable<EmployeeDomainModel> GetAll()
         {
             return _mappingHelper.Map<IEnumerable<EmployeeDomainModel>>(_repository.GetAll());
         }
@@ -52,7 +52,7 @@ namespace SynetecMvcAssessment.Core.Services
 
             //calculate the bonus allocation for the employee
             var bonusPercentage = employeeSalary / (decimal)totalSalary;
-            var bonusAllocation = (int)(bonusPercentage * totalBonusPool);
+            var bonusAllocation = (uint)(bonusPercentage * totalBonusPool);
 
             var result = new BonusPoolCalculatorResultDomainModel
             {
@@ -62,8 +62,6 @@ namespace SynetecMvcAssessment.Core.Services
 
             return result;
         }
-
-
 
     }
 }

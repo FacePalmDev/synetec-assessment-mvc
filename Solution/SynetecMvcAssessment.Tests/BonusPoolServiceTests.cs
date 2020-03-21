@@ -36,7 +36,7 @@ namespace SynetecMvcAssessment.Tests
         {
             var sut = _testHelper.GetBonusPoolService(populateRepository: true);
 
-            var actual = sut.GetAllEmployees();
+            var actual = sut.GetAll();
             var expected = _stubEmployees;
             
             // A cheeky way to compare two complex objects 👌

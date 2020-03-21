@@ -51,6 +51,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IBonusPoolService.cs" />
+    <Compile Include="Contracts\ICalculatable.cs" />
+    <Compile Include="Contracts\IRetrievable.cs" />
     <Compile Include="Exceptions\EmployeeNotFoundException.cs" />
     <Compile Include="Models\BonusPoolCalculatorDomainModel.cs" />
     <Compile Include="Models\BonusPoolCalculatorResultDomainModel.cs" />

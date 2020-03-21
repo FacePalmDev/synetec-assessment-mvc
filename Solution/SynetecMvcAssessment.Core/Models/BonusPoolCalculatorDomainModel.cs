@@ -1,6 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
-namespace SynetecMvcAssessment.Core.Models
+﻿namespace SynetecMvcAssessment.Core.Models
 {
     public class BonusPoolCalculatorDomainModel
     {

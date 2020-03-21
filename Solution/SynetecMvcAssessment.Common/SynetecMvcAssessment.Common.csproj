@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Helpers\Mapping\IMappingHelper.cs" />
+    <Compile Include="Helpers\Mapping\IMappable.cs" />
     <Compile Include="Helpers\Mapping\MappingHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

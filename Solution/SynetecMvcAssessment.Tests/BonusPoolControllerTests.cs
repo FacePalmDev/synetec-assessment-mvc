@@ -45,7 +45,7 @@ namespace SynetecMvcAssessment.Tests
             var allStubEmployees = _stubEmployees;
 
             serviceMock
-            .Setup(s => s.GetAllEmployees())
+            .Setup(s => s.GetAll())
             .Returns(_stubEmployees);
 
             var sut = new BonusPoolController(serviceMock.Object, new MappingHelper<ApiMapperProfile>());
@@ -88,7 +88,7 @@ namespace SynetecMvcAssessment.Tests
 
             //assert
             Assert.IsNotNull(actual);
-            Assert.AreEqual(bonusPoolCalculatorResultModel.BonusPoolAllocation, actual.BonusPoolAllocation);
+            Assert.AreEqual(Json.Encode(bonusPoolCalculatorResultModel.BonusPoolAllocation), Json.Encode(actual.BonusPoolAllocation));
         }
 
 
@@ -101,10 +101,7 @@ namespace SynetecMvcAssessment.Tests
 
             serviceMock
                 .Setup(s => s.Calculate(It.IsAny<BonusPoolCalculatorDomainModel>()))
-                .Returns(new BonusPoolCalculatorResultDomainModel()
-                {
-
-                });
+                .Returns(new BonusPoolCalculatorResultDomainModel());
 
             // act
             new BonusPoolController(serviceMock.Object, new MappingHelper<ApiMapperProfile>()).Calculate(null);
@@ -118,7 +115,7 @@ namespace SynetecMvcAssessment.Tests
          
 
             serviceMock
-                .Setup(s => s.GetAllEmployees())
+                .Setup(s => s.GetAll())
                 .Returns(_stubEmployees);
 
             serviceMock.Setup(x =>

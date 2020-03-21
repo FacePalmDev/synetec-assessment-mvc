@@ -17,7 +17,7 @@ namespace InterviewTestTemplatev2.DependencyResolution
                     scan.With(new ControllerConvention());
                 });
 
-            For<IMappingHelper<ApiMapperProfile>>().Use<MappingHelper<ApiMapperProfile>>();
+            For<IMappable<ApiMapperProfile>>().Use<MappingHelper<ApiMapperProfile>>();
 
         }
     }

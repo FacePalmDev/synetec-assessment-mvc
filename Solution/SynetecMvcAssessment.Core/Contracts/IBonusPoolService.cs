@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-
-using SynetecMvcAssessment.Core.Models;
+﻿using SynetecMvcAssessment.Core.Models;
 
 namespace SynetecMvcAssessment.Core.Contracts
 {
-    public interface IBonusPoolService
+    public interface IBonusPoolService: IRetrievable<EmployeeDomainModel>, ICalculatable<BonusPoolCalculatorDomainModel, BonusPoolCalculatorResultDomainModel>
     {
-        IEnumerable<EmployeeDomainModel> GetAllEmployees();
-        BonusPoolCalculatorResultDomainModel Calculate(BonusPoolCalculatorDomainModel viewModel);
+
     }
+
 }

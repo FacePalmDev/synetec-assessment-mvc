@@ -1,6 +1,6 @@
 ﻿namespace SynetecMvcAssessment.Common.Helpers.Mapping
 {
-    public interface IMappingHelper<TProfile>
+    public interface IMappable<TProfile>
     {
         TDestination Map<TDestination>(object source);
     }
